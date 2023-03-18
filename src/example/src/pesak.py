@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# import modules
 import rospy
 import cv2
 import numpy as np
@@ -19,7 +20,7 @@ class signDetection():
         self.cv_image = np.zeros((640, 480))
         rospy.init_node('Kita', anonymous = True)
         self.image_sub = rospy.Subscriber("/automobile/image_raw", Image, self.callback)
-        self.model = keras.models.load_model('sacuvanModel')
+        self.model = keras.models.load_model('pesakModel')
 
         print(self.model.summary())
         print('model')
