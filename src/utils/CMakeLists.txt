@@ -10,6 +10,9 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    IMU.msg
    localisation.msg
+   lanes.msg 
+   teta.msg 
+   u_raw.msg
  )
 
  generate_messages(

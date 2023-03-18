@@ -4,8 +4,9 @@
 # If the IP of the ROS_MASTER_URI is given as an argument argument to this script, then the ROS_MASTER is set to  
 # that address, otherwise the local ip is considered as master. The ROS_MASTER_URI is set, using the port 11311. 
 
-export ROS_IP=`hostname -I`
-export ROS_HOSTNAME=`hostname -I`
+LOC_IP_temp=`hostname -I`
+export ROS_IP=`ip route get $LOC_IP_temp | grep "src" | sed 's/.*src \([0-9\.]*\).*/\1/'`
+export ROS_HOSTNAME=`ip route get $LOC_IP_temp | grep "src" | sed 's/.*src \([0-9\.]*\).*/\1/'`
 if [ "$1" ]; then
 	ROS_MASTER_URI="http://$1:11311"
 else
