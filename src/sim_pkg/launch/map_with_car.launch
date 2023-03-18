@@ -10,4 +10,15 @@
   </include>
  
   <node pkg="sim_pkg" type="delay.sh" args="5 sim_pkg car.launch" name="car" output="screen"/>
+  <node pkg="sim_pkg" type="delay.sh" args="5 sim_pkg traffic_lights.launch"      name="traffic_lights"       output="screen"/>
+
+  <node pkg="example" type="camera.py" 		name="camera"  		output="screen"/>
+  <node pkg="actuation" type="steering.py" 		name="steering"  		output="screen"/>
+  <node pkg="behaviour" type="DecisionMakingNODE.py" 		name="DecisionMakingNODE"  		output="screen"/>
+  <node pkg="control" type="lanePID.py" 		name="lanePID"  		output="screen"/>
+  <!-- <node pkg="yolo" type="signNode.py" 		name="signNode"  		output="screen"/> -->
+  <!-- <node pkg="sim2car" type="carControl.py" 		name="carControl"  		output="screen"/> -->
+  <node pkg="trafficSignLocal" type="traffic_lightNODE.py" 		name="traffic_lightNODE"  		output="screen"/>
+
+  <!-- <node pkg="example" type="camera.py" 		name="camera"  		output="screen"/> -->
   </launch>
